@@ -1,1 +1,30 @@
-
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Re:Museum ダウンロード</title>
+<meta name="description" content="名画を修復して飾る美術館ゲーム Re:Museum">
+<meta property="og:title" content="Re:Museum｜名画を修復して飾る美術館ゲーム">
+<meta property="og:description" content="オークションで名画と出会い、調べて、直して、あなたの美術館に飾ろう。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://atelier-restauro.github.io/app/">
+<style>
+:root{--bg:#f5efe2;--ink:#3a3226;--wood:#c89b6a;--wood-d:#8a5a36}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+.c{max-width:420px;width:100%;background:#fffaf0;border:3px solid var(--wood);border-radius:18px;box-shadow:0 5px 0 var(--wood-d);padding:24px 20px;text-align:center}
+h1{font-family:Georgia,serif;font-weight:500;font-size:34px;margin:0 0 4px}p{line-height:1.7;margin:8px 0}
+a.b{display:block;margin:12px auto 0;max-width:280px;padding:14px;border-radius:28px;text-decoration:none;font-weight:700;border:2px solid var(--wood);color:var(--wood-d);background:#fff;box-shadow:0 3px 0 var(--wood-d)}
+a.b.pri{background:linear-gradient(#ffe7a0,#d9ab30);border-color:#8a6414;color:#4a3410;box-shadow:0 3px 0 #8a6414}
+small{display:block;margin-top:16px;color:#8a7a5c}
+</style></head><body><div class="c">
+<h1>Re:Museum</h1><p>名画を修復して飾る美術館ゲーム</p>
+<p>オークションで名画と出会い、<br>調べて、直して、あなたの美術館に飾ろう。</p>
+<a class="b pri" id="ios" href="#">App Store でダウンロード</a>
+<a class="b" id="and" href="https://play.google.com/store/apps/details?id=jp.remuseum.app">Google Play でダウンロード</a>
+<small id="soon">2026年11月20日 配信予定</small>
+<small><a href="../" style="color:#8a7a5c">atelier-restauro.github.io</a></small>
+</div>
+<script>
+// App Store の URL は公開後に入れる（空のあいだはボタンを「配信予定」に）
+var IOS_URL='';var AND_URL=document.getElementById('and').href;var ua=navigator.userAgent;
+var ios=document.getElementById('ios');if(IOS_URL){ios.href=IOS_URL}else{ios.removeAttribute('href');ios.textContent='App Store（11月20日 配信予定）';ios.style.opacity=.7}
+var isIOS=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&'ontouchend' in document),isAnd=/Android/.test(ua);
+if(location.search.indexOf('stay')<0){if(isIOS&&IOS_URL)location.replace(IOS_URL);else if(isAnd&&new Date()>=new Date('2026-11-20'))location.replace(AND_URL)}
+</script></body></html>

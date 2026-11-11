@@ -22,9 +22,12 @@ small{display:block;margin-top:16px;color:#8a7a5c}
 <small><a href="../" style="color:#8a7a5c">atelier-restauro.github.io</a></small>
 </div>
 <script>
-// App Store の URL は公開後に入れる（空のあいだはボタンを「配信予定」に）
-var IOS_URL='';var AND_URL=document.getElementById('and').href;var ua=navigator.userAgent;
-var ios=document.getElementById('ios');if(IOS_URL){ios.href=IOS_URL}else{ios.removeAttribute('href');ios.textContent='App Store（11月20日 配信予定）';ios.style.opacity=.7}
+// iOS：11/11〜予約注文受付中、11/20〜配信。Android：11/20 朝に公開
+var IOS_URL='https://apps.apple.com/app/re-museum/id6821240346';var AND_URL=document.getElementById('and').href;var ua=navigator.userAgent;
+var LIVE=new Date()>=new Date('2026-11-20T00:00:00+09:00');
+var ios=document.getElementById('ios'),and=document.getElementById('and'),soon=document.getElementById('soon');
+ios.href=IOS_URL;ios.textContent=LIVE?'App Store でダウンロード':'App Store で予約する';
+if(!LIVE){and.removeAttribute('href');and.textContent='Google Play（11月20日 配信）';and.style.opacity=.7;soon.textContent='2026年11月20日（金）配信。App Store では予約受付中です'}else{soon.textContent='配信中です'}
 var isIOS=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&'ontouchend' in document),isAnd=/Android/.test(ua);
-if(location.search.indexOf('stay')<0){if(isIOS&&IOS_URL)location.replace(IOS_URL);else if(isAnd&&new Date()>=new Date('2026-11-20'))location.replace(AND_URL)}
+if(location.search.indexOf('stay')<0){if(isIOS)location.replace(IOS_URL);else if(isAnd&&LIVE)location.replace(AND_URL)}
 </script></body></html>
